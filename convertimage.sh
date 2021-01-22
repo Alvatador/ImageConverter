@@ -60,7 +60,7 @@ echo "Saved On $PWD"
 fi
 
 if [[ $ask = "webp convert to png" ]] ; then 
-sec=$(zenity --file-selection --title "Select your File [WEB]")
+sec=$(zenity --file-selection --title "Select your File [WEBP]")
 cwebp -q 60 $sec -o output.png &> /dev/null 
 spinlong 
 echo "Saved On $PWD"
