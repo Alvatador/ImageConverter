@@ -24,6 +24,18 @@ exit
 fi
 }
 
+if [[ $(command -v zenity) = "" ]] ; then 
+echo "Starting Image Converter"
+sleep 1
+clear 
+else 
+echo "Downloading Zenity"
+sudo apt install zenity &> /dev/null 
+sudo pacman -S zenity &> /dev/null
+sudo dnf install zenity &> /dev/null
+spinlong
+fi
+
 if [[ $(command -v dwebp) != "" ]] ; then 
 echo "Starting Image Converter"
 sleep 1
@@ -35,6 +47,8 @@ sudo pacman -S webp &> /dev/null
 sudo dnf install webp &> /dev/null
 spinlong
 fi
+
+
 
 ask=$(zenity --list --title="Image Converter" --text "Select action" --radiolist --column "Choice" --column "Action" FALSE "jpg convert to webp" FALSE "png convert to webp" FALSE "webp convert to jpg" FALSE "webp convert to png" FALSE "jpg convert to png" FALSE "png convert to jpg" --width=320 --height=320)
 
