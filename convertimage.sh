@@ -19,13 +19,13 @@ ctrl_c() {
 echo -e "\n"
 zenity --question --text "Are you sure you want to quit?" --no-wrap --ok-label "Yes" --cancel-label "No"
 if [ $? = 0 ] ; then
-echo "Thank you use Convert Image"
+echo "Thank you use Image Converter"
 exit 
 fi
 }
 
 if [[ $(command -v dwebp) != "" ]] ; then 
-echo "Starting Convert Image"
+echo "Starting Image Converter"
 sleep 1
 clear 
 else 
@@ -36,7 +36,7 @@ sudo dnf install webp &> /dev/null
 spinlong
 fi
 
-ask=$(zenity --list --title="Convert Image" --text "Select action" --radiolist --column "Choice" --column "Action" FALSE "jpg convert to webp" FALSE "png convert to webp" FALSE "webp convert to jpg" FALSE "webp convert to png" FALSE "jpg convert to png" FALSE "png convert to jpg" --width=320 --height=320)
+ask=$(zenity --list --title="Image Converter" --text "Select action" --radiolist --column "Choice" --column "Action" FALSE "jpg convert to webp" FALSE "png convert to webp" FALSE "webp convert to jpg" FALSE "webp convert to png" FALSE "jpg convert to png" FALSE "png convert to jpg" --width=320 --height=320)
 
 if [[ $ask = "jpg convert to webp" ]] ; then 
 sec=$(zenity --file-selection --title "Select your File [JPG]")
