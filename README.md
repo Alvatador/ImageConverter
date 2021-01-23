@@ -1,7 +1,7 @@
 # How To Use
 
 ```sh
-bash convertimage.sh
+bash imageconverter.sh
 ```
 
 <p align="center">
