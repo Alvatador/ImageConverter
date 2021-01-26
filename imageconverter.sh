@@ -24,7 +24,7 @@ exit
 fi
 }
 
-if [[ $(command -v zenity) = "" ]] ; then 
+if [[ $(command -v zenity) != "" ]] ; then 
 echo "Starting Image Converter"
 sleep 1
 clear 
